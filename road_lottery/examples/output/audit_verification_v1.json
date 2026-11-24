@@ -1,0 +1,14 @@
+{
+  "schema": "road-audit-verification/1",
+  "ok": true,
+  "errors": [],
+  "node_count": 9,
+  "record_count": 3,
+  "receipt_verification": {
+    "schema": "road-receipt-verification/1",
+    "version_id": "v1",
+    "checked": 5,
+    "ok": true,
+    "mismatches": []
+  }
+}

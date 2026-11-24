@@ -1,0 +1,15 @@
+{
+  "base_version": "v0",
+  "corrections": [
+    {
+      "op": "add",
+      "segment": {
+        "id": "NEW-1",
+        "route": "E1",
+        "order": 10,
+        "length": 4,
+        "forbidden": []
+      }
+    }
+  ]
+}

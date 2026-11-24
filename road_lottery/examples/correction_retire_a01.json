@@ -1,0 +1,7 @@
+{
+  "base_version": "v0",
+  "note": "整段退役 A-01。只发送这一项；A-02、B-01 和空段 A-ZERO 的禁区不会被重读或复制登记。",
+  "corrections": [
+    {"op": "retire", "id": "A-01"}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "base_version": "v0",
+  "corrections": [
+    {
+      "op": "replace",
+      "segment": {
+        "id": "A-01",
+        "route": "G1",
+        "order": 10,
+        "length": 10,
+        "forbidden": [[0, 1]]
+      }
+    }
+  ]
+}

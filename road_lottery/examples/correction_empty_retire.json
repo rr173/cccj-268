@@ -1,0 +1,6 @@
+{
+  "base_version": "v1",
+  "corrections": [
+    {"op": "retire", "id": "NEW-1"}
+  ]
+}

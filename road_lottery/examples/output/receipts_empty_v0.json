@@ -1,0 +1,30 @@
+{
+  "schema": "road-lottery-receipts/1",
+  "tool": "road_lottery_tool",
+  "version_id": "v0",
+  "parent_id": null,
+  "total_effective_coordinates": 0,
+  "ticket_count": 1,
+  "receipts": [
+    {
+      "schema": "road-ticket-receipt/1",
+      "ticket_index": 0,
+      "ticket_id": "EMPTY-BUSINESS-TICKET",
+      "version_id": "v0",
+      "r": "0/1",
+      "r_num": "0",
+      "r_den": "1",
+      "total_effective_coordinates": 0,
+      "rank_formula": "floor((0/1) * 0)",
+      "formula_rank": 0,
+      "status": "empty_frame",
+      "global_rank": null,
+      "point": null,
+      "evidence": {
+        "valid_before_point_global": null,
+        "route": null,
+        "segment": null
+      }
+    }
+  ]
+}

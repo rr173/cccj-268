@@ -1,0 +1,583 @@
+{
+  "schema": "road-audit-bundle/1",
+  "routes_doc": {
+    "schema": "road-routes/1",
+    "routes": [
+      {
+        "id": "G1",
+        "index": 0,
+        "name": "一号旅游公路"
+      },
+      {
+        "id": "G2",
+        "index": 1,
+        "name": "滨河路"
+      }
+    ]
+  },
+  "version": {
+    "schema": "road-version/1",
+    "parent_id": null,
+    "routes_hash": "12dec3809aef599cfbcf9c42601d4cf17985b32f86b60d6e044bbda981b3b7fc",
+    "route_tree_root": "ad082ccadde57d360d69df80eed220ccd2292832dd70e773d36f813a74874fbd",
+    "id_root": "4c0077924df1d2b203142be9c530b8762bc4280c42944346923d4779af54c8f5",
+    "total_effective_coordinates": 28,
+    "segment_count": 4,
+    "version_id": "v0",
+    "correction_hash": null,
+    "op_count": 0
+  },
+  "nodes": {
+    "4c0077924df1d2b203142be9c530b8762bc4280c42944346923d4779af54c8f5": {
+      "kind": "treap",
+      "tree": "segment-id",
+      "key": "A-02",
+      "value": {
+        "segment_id": "A-02",
+        "route_id": "G1",
+        "order": 20,
+        "record_hash": "93b8d62a08e3500cb33c0c190d8e69fbb4cee7ae207a4595ab0ff020b5f0579b",
+        "effective_count": 10
+      },
+      "priority": 99167974804581671102634616643610328698182624235362102415770742827412563466938,
+      "left": "d79a24e8045233a8df0525995e5cd150e7d1bd5e98104c758a2be723f369aff8",
+      "right": "7db120d76e693a869689b9f0a2622bbb91715dbc9d307d9d5e2acdc1d098c710",
+      "leaf_weight": 1,
+      "aggregate": 4
+    },
+    "7db120d76e693a869689b9f0a2622bbb91715dbc9d307d9d5e2acdc1d098c710": {
+      "kind": "treap",
+      "tree": "segment-id",
+      "key": "B-01",
+      "value": {
+        "segment_id": "B-01",
+        "route_id": "G2",
+        "order": 10,
+        "record_hash": "57aab79d4d0a13ccaef650abca6a695592004a676a6c3045133c8aa5cd5a94bb",
+        "effective_count": 8
+      },
+      "priority": 44694864009072559898482936872235599429539324397932412241720517042197271580856,
+      "left": "06db55d1e43973be21868ade9c53668c1005dfd2d0b1f04a8bd52e56bc9f1b89",
+      "right": null,
+      "leaf_weight": 1,
+      "aggregate": 2
+    },
+    "06db55d1e43973be21868ade9c53668c1005dfd2d0b1f04a8bd52e56bc9f1b89": {
+      "kind": "treap",
+      "tree": "segment-id",
+      "key": "A-ZERO",
+      "value": {
+        "segment_id": "A-ZERO",
+        "route_id": "G1",
+        "order": 15,
+        "record_hash": "740ef048759683e881f1fe16ac0f1883617b8fd728569284cf01f1ffb6c1263e",
+        "effective_count": 0
+      },
+      "priority": 20538661045499115566423308874790820590395372222724843451393878391896294205435,
+      "left": null,
+      "right": null,
+      "leaf_weight": 1,
+      "aggregate": 1
+    },
+    "d79a24e8045233a8df0525995e5cd150e7d1bd5e98104c758a2be723f369aff8": {
+      "kind": "treap",
+      "tree": "segment-id",
+      "key": "A-01",
+      "value": {
+        "segment_id": "A-01",
+        "route_id": "G1",
+        "order": 10,
+        "record_hash": "6e6e7dae5c34f24f5df11695451b16b3efab2034a61a30f08096dc8cba2c23d5",
+        "effective_count": 10
+      },
+      "priority": 42009102216753468109384683331644329318105231093675348337123109322431531437440,
+      "left": null,
+      "right": null,
+      "leaf_weight": 1,
+      "aggregate": 1
+    },
+    "ad082ccadde57d360d69df80eed220ccd2292832dd70e773d36f813a74874fbd": {
+      "kind": "route_internal",
+      "lo": 0,
+      "hi": 2,
+      "left": "ff84b85474ee83e758906fc0a5b8e01f1fa33a5c5d3f56b2f32c36bd45bbf7db",
+      "right": "1d1c00d153482b400af581c95db278cffc191a4812ac6e6a56d5ff494d1e6a7b",
+      "aggregate": 28
+    },
+    "1d1c00d153482b400af581c95db278cffc191a4812ac6e6a56d5ff494d1e6a7b": {
+      "kind": "route_leaf",
+      "index": 1,
+      "route_id": "G2",
+      "segment_root": "893fdeabcaa2975aecc6e0079524c25afd96c82dc8ebc0df1b48878e2eaa3e5e",
+      "aggregate": 8
+    },
+    "893fdeabcaa2975aecc6e0079524c25afd96c82dc8ebc0df1b48878e2eaa3e5e": {
+      "kind": "treap",
+      "tree": "segment-order",
+      "key": [
+        10,
+        "B-01"
+      ],
+      "value": {
+        "segment_id": "B-01",
+        "route_id": "G2",
+        "order": 10,
+        "record_hash": "57aab79d4d0a13ccaef650abca6a695592004a676a6c3045133c8aa5cd5a94bb",
+        "effective_count": 8
+      },
+      "priority": 22627102575956842349093576839941457298184691586903828828334903653068947670933,
+      "left": null,
+      "right": null,
+      "leaf_weight": 8,
+      "aggregate": 8
+    },
+    "ff84b85474ee83e758906fc0a5b8e01f1fa33a5c5d3f56b2f32c36bd45bbf7db": {
+      "kind": "route_leaf",
+      "index": 0,
+      "route_id": "G1",
+      "segment_root": "f005494b819073286b9eec38f4f8903381c60889847150ae856466b5310d1949",
+      "aggregate": 20
+    },
+    "f005494b819073286b9eec38f4f8903381c60889847150ae856466b5310d1949": {
+      "kind": "treap",
+      "tree": "segment-order",
+      "key": [
+        10,
+        "A-01"
+      ],
+      "value": {
+        "segment_id": "A-01",
+        "route_id": "G1",
+        "order": 10,
+        "record_hash": "6e6e7dae5c34f24f5df11695451b16b3efab2034a61a30f08096dc8cba2c23d5",
+        "effective_count": 10
+      },
+      "priority": 58841440454298864637443960420630378147922418757881067294079172840460087215800,
+      "left": null,
+      "right": "fc5b85ec11963a120ae7bdfe83e8b07298efa9cb15be6e054434ffb3dd8c852b",
+      "leaf_weight": 10,
+      "aggregate": 20
+    },
+    "fc5b85ec11963a120ae7bdfe83e8b07298efa9cb15be6e054434ffb3dd8c852b": {
+      "kind": "treap",
+      "tree": "segment-order",
+      "key": [
+        15,
+        "A-ZERO"
+      ],
+      "value": {
+        "segment_id": "A-ZERO",
+        "route_id": "G1",
+        "order": 15,
+        "record_hash": "740ef048759683e881f1fe16ac0f1883617b8fd728569284cf01f1ffb6c1263e",
+        "effective_count": 0
+      },
+      "priority": 50815628939671570204114042772194704701085186967753241892737124684175010270921,
+      "left": null,
+      "right": "e4fb1e7733885c5d3db771649ba70321f24c9491ec59251baa07358fd939f5e4",
+      "leaf_weight": 0,
+      "aggregate": 10
+    },
+    "e4fb1e7733885c5d3db771649ba70321f24c9491ec59251baa07358fd939f5e4": {
+      "kind": "treap",
+      "tree": "segment-order",
+      "key": [
+        20,
+        "A-02"
+      ],
+      "value": {
+        "segment_id": "A-02",
+        "route_id": "G1",
+        "order": 20,
+        "record_hash": "93b8d62a08e3500cb33c0c190d8e69fbb4cee7ae207a4595ab0ff020b5f0579b",
+        "effective_count": 10
+      },
+      "priority": 26612648614182327636583515111658161262769271205586984297559479668483518501942,
+      "left": null,
+      "right": null,
+      "leaf_weight": 10,
+      "aggregate": 10
+    }
+  },
+  "records": {
+    "57aab79d4d0a13ccaef650abca6a695592004a676a6c3045133c8aa5cd5a94bb": {
+      "schema": "road-segment-record/1",
+      "record_hash": "57aab79d4d0a13ccaef650abca6a695592004a676a6c3045133c8aa5cd5a94bb",
+      "core": {
+        "id": "B-01",
+        "route": "G2",
+        "order": 10,
+        "length": 10,
+        "forbidden": [
+          [
+            2,
+            4
+          ]
+        ]
+      },
+      "merged_forbidden": [
+        [
+          2,
+          4
+        ]
+      ],
+      "forbidden_prefix": [
+        0,
+        2
+      ],
+      "allowed_before_start": [
+        2
+      ],
+      "effective_count": 8
+    },
+    "6e6e7dae5c34f24f5df11695451b16b3efab2034a61a30f08096dc8cba2c23d5": {
+      "schema": "road-segment-record/1",
+      "record_hash": "6e6e7dae5c34f24f5df11695451b16b3efab2034a61a30f08096dc8cba2c23d5",
+      "core": {
+        "id": "A-01",
+        "route": "G1",
+        "order": 10,
+        "length": 10,
+        "forbidden": []
+      },
+      "merged_forbidden": [],
+      "forbidden_prefix": [
+        0
+      ],
+      "allowed_before_start": [],
+      "effective_count": 10
+    },
+    "740ef048759683e881f1fe16ac0f1883617b8fd728569284cf01f1ffb6c1263e": {
+      "schema": "road-segment-record/1",
+      "record_hash": "740ef048759683e881f1fe16ac0f1883617b8fd728569284cf01f1ffb6c1263e",
+      "core": {
+        "id": "A-ZERO",
+        "route": "G1",
+        "order": 15,
+        "length": 5,
+        "forbidden": [
+          [
+            0,
+            5
+          ]
+        ]
+      },
+      "merged_forbidden": [
+        [
+          0,
+          5
+        ]
+      ],
+      "forbidden_prefix": [
+        0,
+        5
+      ],
+      "allowed_before_start": [
+        0
+      ],
+      "effective_count": 0
+    },
+    "93b8d62a08e3500cb33c0c190d8e69fbb4cee7ae207a4595ab0ff020b5f0579b": {
+      "schema": "road-segment-record/1",
+      "record_hash": "93b8d62a08e3500cb33c0c190d8e69fbb4cee7ae207a4595ab0ff020b5f0579b",
+      "core": {
+        "id": "A-02",
+        "route": "G1",
+        "order": 20,
+        "length": 10,
+        "forbidden": []
+      },
+      "merged_forbidden": [],
+      "forbidden_prefix": [
+        0
+      ],
+      "allowed_before_start": [],
+      "effective_count": 10
+    }
+  },
+  "receipts": {
+    "schema": "road-lottery-receipts/1",
+    "tool": "road_lottery_tool",
+    "version_id": "v0",
+    "parent_id": null,
+    "total_effective_coordinates": 28,
+    "ticket_count": 5,
+    "receipts": [
+      {
+        "schema": "road-ticket-receipt/1",
+        "ticket_index": 0,
+        "ticket_id": "LOT-2026-0001",
+        "version_id": "v0",
+        "r": "0/1",
+        "r_num": "0",
+        "r_den": "1",
+        "total_effective_coordinates": 28,
+        "rank_formula": "floor((0/1) * 28)",
+        "formula_rank": 0,
+        "status": "located",
+        "global_rank": 0,
+        "point": {
+          "segment_id": "A-01",
+          "route_id": "G1",
+          "route_index": 0,
+          "order": 10,
+          "local_coordinate": 0,
+          "record_hash": "6e6e7dae5c34f24f5df11695451b16b3efab2034a61a30f08096dc8cba2c23d5"
+        },
+        "evidence": {
+          "valid_before_point_global": 0,
+          "route": {
+            "route_id": "G1",
+            "route_index": 0,
+            "before_effective": 0,
+            "route_effective_count": 20
+          },
+          "segment": {
+            "segment_id": "A-01",
+            "route_id": "G1",
+            "order": 10,
+            "before_effective_on_route": 0,
+            "before_effective_global": 0,
+            "segment_effective_count": 10,
+            "intra_rank": 0,
+            "local_coordinate": 0,
+            "valid_before_local": 0,
+            "forbidden_before_local": 0,
+            "length": 10,
+            "record_hash": "6e6e7dae5c34f24f5df11695451b16b3efab2034a61a30f08096dc8cba2c23d5"
+          },
+          "local_selection": {
+            "segment_id": "A-01",
+            "length": 10,
+            "effective_count": 10,
+            "intra_rank": 0,
+            "local_coordinate": 0,
+            "valid_before_local": 0,
+            "forbidden_before_local": 0,
+            "record_hash": "6e6e7dae5c34f24f5df11695451b16b3efab2034a61a30f08096dc8cba2c23d5"
+          }
+        }
+      },
+      {
+        "schema": "road-ticket-receipt/1",
+        "ticket_index": 1,
+        "ticket_id": "LOT-2026-0002",
+        "version_id": "v0",
+        "r": "0/1",
+        "r_num": "0",
+        "r_den": "1",
+        "total_effective_coordinates": 28,
+        "rank_formula": "floor((0/1) * 28)",
+        "formula_rank": 0,
+        "status": "located",
+        "global_rank": 0,
+        "point": {
+          "segment_id": "A-01",
+          "route_id": "G1",
+          "route_index": 0,
+          "order": 10,
+          "local_coordinate": 0,
+          "record_hash": "6e6e7dae5c34f24f5df11695451b16b3efab2034a61a30f08096dc8cba2c23d5"
+        },
+        "evidence": {
+          "valid_before_point_global": 0,
+          "route": {
+            "route_id": "G1",
+            "route_index": 0,
+            "before_effective": 0,
+            "route_effective_count": 20
+          },
+          "segment": {
+            "segment_id": "A-01",
+            "route_id": "G1",
+            "order": 10,
+            "before_effective_on_route": 0,
+            "before_effective_global": 0,
+            "segment_effective_count": 10,
+            "intra_rank": 0,
+            "local_coordinate": 0,
+            "valid_before_local": 0,
+            "forbidden_before_local": 0,
+            "length": 10,
+            "record_hash": "6e6e7dae5c34f24f5df11695451b16b3efab2034a61a30f08096dc8cba2c23d5"
+          },
+          "local_selection": {
+            "segment_id": "A-01",
+            "length": 10,
+            "effective_count": 10,
+            "intra_rank": 0,
+            "local_coordinate": 0,
+            "valid_before_local": 0,
+            "forbidden_before_local": 0,
+            "record_hash": "6e6e7dae5c34f24f5df11695451b16b3efab2034a61a30f08096dc8cba2c23d5"
+          }
+        }
+      },
+      {
+        "schema": "road-ticket-receipt/1",
+        "ticket_index": 2,
+        "ticket_id": "LOT-2026-0003",
+        "version_id": "v0",
+        "r": "10/28",
+        "r_num": "10",
+        "r_den": "28",
+        "total_effective_coordinates": 28,
+        "rank_formula": "floor((10/28) * 28)",
+        "formula_rank": 10,
+        "status": "located",
+        "global_rank": 10,
+        "point": {
+          "segment_id": "A-02",
+          "route_id": "G1",
+          "route_index": 0,
+          "order": 20,
+          "local_coordinate": 0,
+          "record_hash": "93b8d62a08e3500cb33c0c190d8e69fbb4cee7ae207a4595ab0ff020b5f0579b"
+        },
+        "evidence": {
+          "valid_before_point_global": 10,
+          "route": {
+            "route_id": "G1",
+            "route_index": 0,
+            "before_effective": 0,
+            "route_effective_count": 20
+          },
+          "segment": {
+            "segment_id": "A-02",
+            "route_id": "G1",
+            "order": 20,
+            "before_effective_on_route": 10,
+            "before_effective_global": 10,
+            "segment_effective_count": 10,
+            "intra_rank": 0,
+            "local_coordinate": 0,
+            "valid_before_local": 0,
+            "forbidden_before_local": 0,
+            "length": 10,
+            "record_hash": "93b8d62a08e3500cb33c0c190d8e69fbb4cee7ae207a4595ab0ff020b5f0579b"
+          },
+          "local_selection": {
+            "segment_id": "A-02",
+            "length": 10,
+            "effective_count": 10,
+            "intra_rank": 0,
+            "local_coordinate": 0,
+            "valid_before_local": 0,
+            "forbidden_before_local": 0,
+            "record_hash": "93b8d62a08e3500cb33c0c190d8e69fbb4cee7ae207a4595ab0ff020b5f0579b"
+          }
+        }
+      },
+      {
+        "schema": "road-ticket-receipt/1",
+        "ticket_index": 3,
+        "ticket_id": "LOT-2026-0004",
+        "version_id": "v0",
+        "r": "15/28",
+        "r_num": "15",
+        "r_den": "28",
+        "total_effective_coordinates": 28,
+        "rank_formula": "floor((15/28) * 28)",
+        "formula_rank": 15,
+        "status": "located",
+        "global_rank": 15,
+        "point": {
+          "segment_id": "A-02",
+          "route_id": "G1",
+          "route_index": 0,
+          "order": 20,
+          "local_coordinate": 5,
+          "record_hash": "93b8d62a08e3500cb33c0c190d8e69fbb4cee7ae207a4595ab0ff020b5f0579b"
+        },
+        "evidence": {
+          "valid_before_point_global": 15,
+          "route": {
+            "route_id": "G1",
+            "route_index": 0,
+            "before_effective": 0,
+            "route_effective_count": 20
+          },
+          "segment": {
+            "segment_id": "A-02",
+            "route_id": "G1",
+            "order": 20,
+            "before_effective_on_route": 10,
+            "before_effective_global": 10,
+            "segment_effective_count": 10,
+            "intra_rank": 5,
+            "local_coordinate": 5,
+            "valid_before_local": 5,
+            "forbidden_before_local": 0,
+            "length": 10,
+            "record_hash": "93b8d62a08e3500cb33c0c190d8e69fbb4cee7ae207a4595ab0ff020b5f0579b"
+          },
+          "local_selection": {
+            "segment_id": "A-02",
+            "length": 10,
+            "effective_count": 10,
+            "intra_rank": 5,
+            "local_coordinate": 5,
+            "valid_before_local": 5,
+            "forbidden_before_local": 0,
+            "record_hash": "93b8d62a08e3500cb33c0c190d8e69fbb4cee7ae207a4595ab0ff020b5f0579b"
+          }
+        }
+      },
+      {
+        "schema": "road-ticket-receipt/1",
+        "ticket_index": 4,
+        "ticket_id": "LOT-2026-0005",
+        "version_id": "v0",
+        "r": "22/28",
+        "r_num": "22",
+        "r_den": "28",
+        "total_effective_coordinates": 28,
+        "rank_formula": "floor((22/28) * 28)",
+        "formula_rank": 22,
+        "status": "located",
+        "global_rank": 22,
+        "point": {
+          "segment_id": "B-01",
+          "route_id": "G2",
+          "route_index": 1,
+          "order": 10,
+          "local_coordinate": 4,
+          "record_hash": "57aab79d4d0a13ccaef650abca6a695592004a676a6c3045133c8aa5cd5a94bb"
+        },
+        "evidence": {
+          "valid_before_point_global": 22,
+          "route": {
+            "route_id": "G2",
+            "route_index": 1,
+            "before_effective": 20,
+            "route_effective_count": 8
+          },
+          "segment": {
+            "segment_id": "B-01",
+            "route_id": "G2",
+            "order": 10,
+            "before_effective_on_route": 0,
+            "before_effective_global": 20,
+            "segment_effective_count": 8,
+            "intra_rank": 2,
+            "local_coordinate": 4,
+            "valid_before_local": 2,
+            "forbidden_before_local": 2,
+            "length": 10,
+            "record_hash": "57aab79d4d0a13ccaef650abca6a695592004a676a6c3045133c8aa5cd5a94bb"
+          },
+          "local_selection": {
+            "segment_id": "B-01",
+            "length": 10,
+            "effective_count": 8,
+            "intra_rank": 2,
+            "local_coordinate": 4,
+            "valid_before_local": 2,
+            "forbidden_before_local": 2,
+            "record_hash": "57aab79d4d0a13ccaef650abca6a695592004a676a6c3045133c8aa5cd5a94bb"
+          }
+        }
+      }
+    ]
+  }
+}

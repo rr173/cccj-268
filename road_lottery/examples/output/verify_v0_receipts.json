@@ -1,0 +1,7 @@
+{
+  "schema": "road-receipt-verification/1",
+  "version_id": "v0",
+  "checked": 5,
+  "ok": true,
+  "mismatches": []
+}

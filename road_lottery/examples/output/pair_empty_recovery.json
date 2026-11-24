@@ -1,0 +1,160 @@
+{
+  "schema": "road-pair-report/1",
+  "old_version_id": "v0",
+  "new_version_id": "v1",
+  "ticket_count": 1,
+  "category_counts": {
+    "empty_to_point": 1
+  },
+  "physical_change_count": 1,
+  "route_only_notice_count": 0,
+  "change_orders": [
+    {
+      "ticket_index": 0,
+      "ticket_id": "EMPTY-BUSINESS-TICKET",
+      "change": "empty_to_point",
+      "field_action": "reinspect_new_point",
+      "requires_new_inspection": true,
+      "old_point": null,
+      "new_point": {
+        "segment_id": "NEW-1",
+        "route_id": "E1",
+        "route_index": 0,
+        "order": 10,
+        "local_coordinate": 0,
+        "record_hash": "456a308b5d6d0dc9922469718e1371081b50ad09329966a37ec1e499fc2db8e9"
+      },
+      "old_evidence": {
+        "valid_before_point_global": null,
+        "route": null,
+        "segment": null
+      },
+      "new_evidence": {
+        "valid_before_point_global": 0,
+        "route": {
+          "route_id": "E1",
+          "route_index": 0,
+          "before_effective": 0,
+          "route_effective_count": 4
+        },
+        "segment": {
+          "segment_id": "NEW-1",
+          "route_id": "E1",
+          "order": 10,
+          "before_effective_on_route": 0,
+          "before_effective_global": 0,
+          "segment_effective_count": 4,
+          "intra_rank": 0,
+          "local_coordinate": 0,
+          "valid_before_local": 0,
+          "forbidden_before_local": 0,
+          "length": 4,
+          "record_hash": "456a308b5d6d0dc9922469718e1371081b50ad09329966a37ec1e499fc2db8e9"
+        },
+        "local_selection": {
+          "segment_id": "NEW-1",
+          "length": 4,
+          "effective_count": 4,
+          "intra_rank": 0,
+          "local_coordinate": 0,
+          "valid_before_local": 0,
+          "forbidden_before_local": 0,
+          "record_hash": "456a308b5d6d0dc9922469718e1371081b50ad09329966a37ec1e499fc2db8e9"
+        }
+      }
+    }
+  ],
+  "route_only_notices": [],
+  "pairs": [
+    {
+      "ticket_index": 0,
+      "ticket_id": "EMPTY-BUSINESS-TICKET",
+      "r": "0/1",
+      "old_version_id": "v0",
+      "new_version_id": "v1",
+      "change": "empty_to_point",
+      "physical_point_changed": true,
+      "requires_new_inspection": true,
+      "field_action": "reinspect_new_point",
+      "route_changed": false,
+      "order_changed": false,
+      "registration_changed": false,
+      "route_action": "none",
+      "old_receipt": {
+        "schema": "road-ticket-receipt/1",
+        "ticket_index": 0,
+        "ticket_id": "EMPTY-BUSINESS-TICKET",
+        "version_id": "v0",
+        "r": "0/1",
+        "r_num": "0",
+        "r_den": "1",
+        "total_effective_coordinates": 0,
+        "rank_formula": "floor((0/1) * 0)",
+        "formula_rank": 0,
+        "status": "empty_frame",
+        "global_rank": null,
+        "point": null,
+        "evidence": {
+          "valid_before_point_global": null,
+          "route": null,
+          "segment": null
+        }
+      },
+      "new_receipt": {
+        "schema": "road-ticket-receipt/1",
+        "ticket_index": 0,
+        "ticket_id": "EMPTY-BUSINESS-TICKET",
+        "version_id": "v1",
+        "r": "0/1",
+        "r_num": "0",
+        "r_den": "1",
+        "total_effective_coordinates": 4,
+        "rank_formula": "floor((0/1) * 4)",
+        "formula_rank": 0,
+        "status": "located",
+        "global_rank": 0,
+        "point": {
+          "segment_id": "NEW-1",
+          "route_id": "E1",
+          "route_index": 0,
+          "order": 10,
+          "local_coordinate": 0,
+          "record_hash": "456a308b5d6d0dc9922469718e1371081b50ad09329966a37ec1e499fc2db8e9"
+        },
+        "evidence": {
+          "valid_before_point_global": 0,
+          "route": {
+            "route_id": "E1",
+            "route_index": 0,
+            "before_effective": 0,
+            "route_effective_count": 4
+          },
+          "segment": {
+            "segment_id": "NEW-1",
+            "route_id": "E1",
+            "order": 10,
+            "before_effective_on_route": 0,
+            "before_effective_global": 0,
+            "segment_effective_count": 4,
+            "intra_rank": 0,
+            "local_coordinate": 0,
+            "valid_before_local": 0,
+            "forbidden_before_local": 0,
+            "length": 4,
+            "record_hash": "456a308b5d6d0dc9922469718e1371081b50ad09329966a37ec1e499fc2db8e9"
+          },
+          "local_selection": {
+            "segment_id": "NEW-1",
+            "length": 4,
+            "effective_count": 4,
+            "intra_rank": 0,
+            "local_coordinate": 0,
+            "valid_before_local": 0,
+            "forbidden_before_local": 0,
+            "record_hash": "456a308b5d6d0dc9922469718e1371081b50ad09329966a37ec1e499fc2db8e9"
+          }
+        }
+      }
+    }
+  ]
+}

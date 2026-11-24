@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "road-lottery-offline-tool"
+version = "1.0.0"
+description = "Offline ticketing, replay, pairing and audit tool for road-maintenance sample points"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+road-lottery = "roadtool.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["roadtool*"]

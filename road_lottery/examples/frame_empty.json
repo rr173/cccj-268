@@ -1,0 +1,12 @@
+{
+  "routes": ["E1"],
+  "segments": [
+    {
+      "id": "ONLY-EMPTY",
+      "route": "E1",
+      "order": 0,
+      "length": 3,
+      "forbidden": [[0, 3]]
+    }
+  ]
+}

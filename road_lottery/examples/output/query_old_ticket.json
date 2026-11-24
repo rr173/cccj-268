@@ -1,0 +1,55 @@
+{
+  "schema": "road-ticket-receipt/1",
+  "ticket_index": 4,
+  "ticket_id": "LOT-2026-0005",
+  "version_id": "v0",
+  "r": "22/28",
+  "r_num": "22",
+  "r_den": "28",
+  "total_effective_coordinates": 28,
+  "rank_formula": "floor((22/28) * 28)",
+  "formula_rank": 22,
+  "status": "located",
+  "global_rank": 22,
+  "point": {
+    "segment_id": "B-01",
+    "route_id": "G2",
+    "route_index": 1,
+    "order": 10,
+    "local_coordinate": 4,
+    "record_hash": "57aab79d4d0a13ccaef650abca6a695592004a676a6c3045133c8aa5cd5a94bb"
+  },
+  "evidence": {
+    "valid_before_point_global": 22,
+    "route": {
+      "route_id": "G2",
+      "route_index": 1,
+      "before_effective": 20,
+      "route_effective_count": 8
+    },
+    "segment": {
+      "segment_id": "B-01",
+      "route_id": "G2",
+      "order": 10,
+      "before_effective_on_route": 0,
+      "before_effective_global": 20,
+      "segment_effective_count": 8,
+      "intra_rank": 2,
+      "local_coordinate": 4,
+      "valid_before_local": 2,
+      "forbidden_before_local": 2,
+      "length": 10,
+      "record_hash": "57aab79d4d0a13ccaef650abca6a695592004a676a6c3045133c8aa5cd5a94bb"
+    },
+    "local_selection": {
+      "segment_id": "B-01",
+      "length": 10,
+      "effective_count": 8,
+      "intra_rank": 2,
+      "local_coordinate": 4,
+      "valid_before_local": 2,
+      "forbidden_before_local": 2,
+      "record_hash": "57aab79d4d0a13ccaef650abca6a695592004a676a6c3045133c8aa5cd5a94bb"
+    }
+  }
+}

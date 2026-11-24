@@ -1,0 +1,7 @@
+{
+  "routes": ["R"],
+  "segments": [
+    {"id": "DUP", "route": "R", "order": 0, "length": 2},
+    {"id": "DUP", "route": "R", "order": 1, "length": 2}
+  ]
+}

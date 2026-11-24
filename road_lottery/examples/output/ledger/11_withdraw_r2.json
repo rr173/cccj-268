@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "withdrawn": true,
+  "noop": false,
+  "record_id": "R2",
+  "withdrawal": {
+    "schema": "road-withdrawal/1",
+    "record_id": "R2"
+  }
+}

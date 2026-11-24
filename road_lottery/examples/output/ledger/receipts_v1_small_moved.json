@@ -1,0 +1,175 @@
+{
+  "schema": "road-lottery-receipts/1",
+  "tool": "road_lottery_tool",
+  "version_id": "v1",
+  "parent_id": "v0",
+  "total_effective_coordinates": 4,
+  "ticket_count": 3,
+  "receipts": [
+    {
+      "schema": "road-ticket-receipt/1",
+      "ticket_index": 0,
+      "ticket_id": "T1",
+      "version_id": "v1",
+      "r": "0/1",
+      "r_num": "0",
+      "r_den": "1",
+      "total_effective_coordinates": 4,
+      "rank_formula": "floor((0/1) * 4)",
+      "formula_rank": 0,
+      "status": "located",
+      "global_rank": 0,
+      "point": {
+        "segment_id": "P-01",
+        "route_id": "R",
+        "route_index": 0,
+        "order": 0,
+        "local_coordinate": 2,
+        "record_hash": "0f9d32e50db73ef90a7a3d3acbf23e799e07b748b3742ca91915e4b375dddc94"
+      },
+      "evidence": {
+        "valid_before_point_global": 0,
+        "route": {
+          "route_id": "R",
+          "route_index": 0,
+          "before_effective": 0,
+          "route_effective_count": 4
+        },
+        "segment": {
+          "segment_id": "P-01",
+          "route_id": "R",
+          "order": 0,
+          "before_effective_on_route": 0,
+          "before_effective_global": 0,
+          "segment_effective_count": 4,
+          "intra_rank": 0,
+          "local_coordinate": 2,
+          "valid_before_local": 0,
+          "forbidden_before_local": 2,
+          "length": 6,
+          "record_hash": "0f9d32e50db73ef90a7a3d3acbf23e799e07b748b3742ca91915e4b375dddc94"
+        },
+        "local_selection": {
+          "segment_id": "P-01",
+          "length": 6,
+          "effective_count": 4,
+          "intra_rank": 0,
+          "local_coordinate": 2,
+          "valid_before_local": 0,
+          "forbidden_before_local": 2,
+          "record_hash": "0f9d32e50db73ef90a7a3d3acbf23e799e07b748b3742ca91915e4b375dddc94"
+        }
+      }
+    },
+    {
+      "schema": "road-ticket-receipt/1",
+      "ticket_index": 1,
+      "ticket_id": "T2",
+      "version_id": "v1",
+      "r": "2/6",
+      "r_num": "2",
+      "r_den": "6",
+      "total_effective_coordinates": 4,
+      "rank_formula": "floor((2/6) * 4)",
+      "formula_rank": 1,
+      "status": "located",
+      "global_rank": 1,
+      "point": {
+        "segment_id": "P-01",
+        "route_id": "R",
+        "route_index": 0,
+        "order": 0,
+        "local_coordinate": 3,
+        "record_hash": "0f9d32e50db73ef90a7a3d3acbf23e799e07b748b3742ca91915e4b375dddc94"
+      },
+      "evidence": {
+        "valid_before_point_global": 1,
+        "route": {
+          "route_id": "R",
+          "route_index": 0,
+          "before_effective": 0,
+          "route_effective_count": 4
+        },
+        "segment": {
+          "segment_id": "P-01",
+          "route_id": "R",
+          "order": 0,
+          "before_effective_on_route": 0,
+          "before_effective_global": 0,
+          "segment_effective_count": 4,
+          "intra_rank": 1,
+          "local_coordinate": 3,
+          "valid_before_local": 1,
+          "forbidden_before_local": 2,
+          "length": 6,
+          "record_hash": "0f9d32e50db73ef90a7a3d3acbf23e799e07b748b3742ca91915e4b375dddc94"
+        },
+        "local_selection": {
+          "segment_id": "P-01",
+          "length": 6,
+          "effective_count": 4,
+          "intra_rank": 1,
+          "local_coordinate": 3,
+          "valid_before_local": 1,
+          "forbidden_before_local": 2,
+          "record_hash": "0f9d32e50db73ef90a7a3d3acbf23e799e07b748b3742ca91915e4b375dddc94"
+        }
+      }
+    },
+    {
+      "schema": "road-ticket-receipt/1",
+      "ticket_index": 2,
+      "ticket_id": "T3",
+      "version_id": "v1",
+      "r": "5/6",
+      "r_num": "5",
+      "r_den": "6",
+      "total_effective_coordinates": 4,
+      "rank_formula": "floor((5/6) * 4)",
+      "formula_rank": 3,
+      "status": "located",
+      "global_rank": 3,
+      "point": {
+        "segment_id": "P-01",
+        "route_id": "R",
+        "route_index": 0,
+        "order": 0,
+        "local_coordinate": 5,
+        "record_hash": "0f9d32e50db73ef90a7a3d3acbf23e799e07b748b3742ca91915e4b375dddc94"
+      },
+      "evidence": {
+        "valid_before_point_global": 3,
+        "route": {
+          "route_id": "R",
+          "route_index": 0,
+          "before_effective": 0,
+          "route_effective_count": 4
+        },
+        "segment": {
+          "segment_id": "P-01",
+          "route_id": "R",
+          "order": 0,
+          "before_effective_on_route": 0,
+          "before_effective_global": 0,
+          "segment_effective_count": 4,
+          "intra_rank": 3,
+          "local_coordinate": 5,
+          "valid_before_local": 3,
+          "forbidden_before_local": 2,
+          "length": 6,
+          "record_hash": "0f9d32e50db73ef90a7a3d3acbf23e799e07b748b3742ca91915e4b375dddc94"
+        },
+        "local_selection": {
+          "segment_id": "P-01",
+          "length": 6,
+          "effective_count": 4,
+          "intra_rank": 3,
+          "local_coordinate": 5,
+          "valid_before_local": 3,
+          "forbidden_before_local": 2,
+          "record_hash": "0f9d32e50db73ef90a7a3d3acbf23e799e07b748b3742ca91915e4b375dddc94"
+        }
+      }
+    }
+  ]
+}

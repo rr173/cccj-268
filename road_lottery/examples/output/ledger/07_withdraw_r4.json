@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "withdrawn": true,
+  "noop": false,
+  "record_id": "R4",
+  "withdrawal": {
+    "schema": "road-withdrawal/1",
+    "record_id": "R4",
+    "reason": "合并依据不足，撤回复核结果",
+    "by": "核销员"
+  }
+}

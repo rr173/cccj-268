@@ -1,0 +1,14 @@
+{
+  "batch_id": "B2-fork-left",
+  "comment": "离线分支一：乙组接续 R1。",
+  "records": [
+    {
+      "id": "R2",
+      "ticket_id": "T1",
+      "status": "已查验",
+      "parents": ["R1"],
+      "by": "现场乙组",
+      "note": "离线复核后仍为已查验"
+    }
+  ]
+}

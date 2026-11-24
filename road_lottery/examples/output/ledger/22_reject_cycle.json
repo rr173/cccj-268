@@ -1,0 +1,1 @@
+{"ok": false, "error": "结果因果图存在环，涉及记录: ['XA', 'XB']；批次 B-bad-cycle 整批拒绝", "code": "cycle_detected"}

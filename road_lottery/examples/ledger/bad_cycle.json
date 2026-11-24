@@ -1,0 +1,8 @@
+{
+  "batch_id": "B-bad-cycle",
+  "comment": "失败批次：XA 接续 XB、XB 接续 XA，整体有环，整批拒绝。行顺序故意交错。",
+  "records": [
+    {"id": "XA", "ticket_id": "TC", "status": "已查验", "parents": ["XB"]},
+    {"id": "XB", "ticket_id": "TC", "status": "已查验", "parents": ["XA"]}
+  ]
+}

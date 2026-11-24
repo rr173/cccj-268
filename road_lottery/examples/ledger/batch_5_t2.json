@@ -1,0 +1,14 @@
+{
+  "batch_id": "B5-t2",
+  "comment": "T2 只有一份未到场根结果。",
+  "records": [
+    {
+      "id": "R5",
+      "ticket_id": "T2",
+      "status": "未到场",
+      "parents": [],
+      "by": "现场甲组",
+      "note": "在 P-01#2 等候超时，签人未到场"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "comment": "账本演示用极小框：一条路线、一个长 6 的段，W=6，方便肉眼核对小回执上的原出票点。",
+  "routes": ["R"],
+  "segments": [
+    {"id": "P-01", "route": "R", "order": 0, "length": 6, "forbidden": []}
+  ]
+}

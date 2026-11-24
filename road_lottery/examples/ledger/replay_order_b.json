@@ -1,0 +1,9 @@
+{
+  "batch_id": "RM-reorder",
+  "comment": "独立重放 B：同号同内容，仅行顺序不同（父在前）；两个账本的报告必须完全一致。",
+  "records": [
+    {"id": "RM2", "ticket_id": "T1", "status": "已查验", "parents": ["R1"]},
+    {"id": "RM3", "ticket_id": "T1", "status": "已查验", "parents": ["R1"]},
+    {"id": "RM4", "ticket_id": "T1", "status": "已查验", "parents": ["RM2", "RM3"]}
+  ]
+}

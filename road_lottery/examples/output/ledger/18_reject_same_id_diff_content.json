@@ -1,0 +1,1 @@
+{"ok": false, "error": "批次号 B1-base 已导入但内容不同；同号异内容整批拒绝（原指纹 d3f61d0269cc…，新指纹 c6605a1c82f9…）", "code": "batch_content_conflict"}

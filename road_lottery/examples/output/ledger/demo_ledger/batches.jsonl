@@ -1,0 +1,5 @@
+{"batch_id":"B1-base","content_hash":"d3f61d0269cc53ca9d66ab96c3e3e163e3e7647b3d8ec2929fbf59d01bee7303","record_count":1,"record_ids":["R1"],"schema":"road-batch-marker/1"}
+{"batch_id":"B2-fork-left","content_hash":"b7ea1f0e8795890375d117b95817e00dc395d22060416e851a64b84c10ff0078","record_count":1,"record_ids":["R2"],"schema":"road-batch-marker/1"}
+{"batch_id":"B3-fork-right","content_hash":"59257d4c960009f608b287085d85e06a8df06b83cceb1f0e305a0238c1fa7c00","record_count":1,"record_ids":["R3"],"schema":"road-batch-marker/1"}
+{"batch_id":"B4-merge","content_hash":"ae6224a19cd5270ca8c1804d29af2781d1f05a6f7db8963eb52098cd68442070","record_count":1,"record_ids":["R4"],"schema":"road-batch-marker/1"}
+{"batch_id":"B5-t2","content_hash":"bd720bfb21428b554067e1ad65eb5dd894832be38cbb474384a86ec9dd0dc042","record_count":1,"record_ids":["R5"],"schema":"road-batch-marker/1"}

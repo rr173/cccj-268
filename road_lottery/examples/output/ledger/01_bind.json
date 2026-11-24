@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "bound": 3,
+  "unchanged": 0,
+  "ticket_ids": [
+    "T1",
+    "T2",
+    "T3"
+  ],
+  "newly_bound_ticket_ids": [
+    "T1",
+    "T2",
+    "T3"
+  ]
+}

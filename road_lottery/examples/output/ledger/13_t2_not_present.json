@@ -1,0 +1,404 @@
+{
+  "schema": "road-ledger-ticket-report/1",
+  "ticket_id": "T2",
+  "state": "unique",
+  "state_code": "unique",
+  "state_zh": "唯一候选",
+  "status": "未到场",
+  "current_status": "未到场",
+  "current_result": {
+    "batch_id": "B5-t2",
+    "by": "现场甲组",
+    "id": "R5",
+    "note": "在 P-01#2 等候超时，签人未到场",
+    "parents": [],
+    "schema": "road-result-record/1",
+    "status": "未到场",
+    "status_code": "not_present",
+    "status_zh": "未到场",
+    "ticket_id": "T2",
+    "record_id": "R5",
+    "parent_ids": [],
+    "withdrawn": false,
+    "withdrawal": null,
+    "source_chain_ids": [
+      "R5"
+    ],
+    "source_chain": [
+      {
+        "batch_id": "B5-t2",
+        "by": "现场甲组",
+        "id": "R5",
+        "note": "在 P-01#2 等候超时，签人未到场",
+        "parents": [],
+        "schema": "road-result-record/1",
+        "status": "未到场",
+        "status_code": "not_present",
+        "status_zh": "未到场",
+        "ticket_id": "T2",
+        "record_id": "R5",
+        "parent_ids": [],
+        "withdrawn": false,
+        "withdrawal": null
+      }
+    ]
+  },
+  "adopted": {
+    "batch_id": "B5-t2",
+    "by": "现场甲组",
+    "id": "R5",
+    "note": "在 P-01#2 等候超时，签人未到场",
+    "parents": [],
+    "schema": "road-result-record/1",
+    "status": "未到场",
+    "status_code": "not_present",
+    "status_zh": "未到场",
+    "ticket_id": "T2",
+    "record_id": "R5",
+    "parent_ids": [],
+    "withdrawn": false,
+    "withdrawal": null,
+    "source_chain_ids": [
+      "R5"
+    ],
+    "source_chain": [
+      {
+        "batch_id": "B5-t2",
+        "by": "现场甲组",
+        "id": "R5",
+        "note": "在 P-01#2 等候超时，签人未到场",
+        "parents": [],
+        "schema": "road-result-record/1",
+        "status": "未到场",
+        "status_code": "not_present",
+        "status_zh": "未到场",
+        "ticket_id": "T2",
+        "record_id": "R5",
+        "parent_ids": [],
+        "withdrawn": false,
+        "withdrawal": null
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "batch_id": "B5-t2",
+      "by": "现场甲组",
+      "id": "R5",
+      "note": "在 P-01#2 等候超时，签人未到场",
+      "parents": [],
+      "schema": "road-result-record/1",
+      "status": "未到场",
+      "status_code": "not_present",
+      "status_zh": "未到场",
+      "ticket_id": "T2",
+      "record_id": "R5",
+      "parent_ids": [],
+      "withdrawn": false,
+      "withdrawal": null,
+      "source_chain_ids": [
+        "R5"
+      ],
+      "source_chain": [
+        {
+          "batch_id": "B5-t2",
+          "by": "现场甲组",
+          "id": "R5",
+          "note": "在 P-01#2 等候超时，签人未到场",
+          "parents": [],
+          "schema": "road-result-record/1",
+          "status": "未到场",
+          "status_code": "not_present",
+          "status_zh": "未到场",
+          "ticket_id": "T2",
+          "record_id": "R5",
+          "parent_ids": [],
+          "withdrawn": false,
+          "withdrawal": null
+        }
+      ]
+    }
+  ],
+  "candidate_ids": [
+    "R5"
+  ],
+  "candidate_count": 1,
+  "has_candidate": true,
+  "conflict": false,
+  "pending_review": false,
+  "decision_basis": {
+    "rule": "候选=未撤回且不存在其他未撤回后代的结果；后代闭包穿过已撤回记录仍然有效；0 候选为未查验，1 候选采用其状态，多候选为冲突待核",
+    "state": "unique",
+    "candidate_ids": [
+      "R5"
+    ],
+    "adopted_record_id": "R5",
+    "candidate_source_chain_ids": [
+      [
+        "R5"
+      ]
+    ]
+  },
+  "inspected": false,
+  "binding": {
+    "schema": "road-ticket-binding/1",
+    "ticket_id": "T2",
+    "receipt_hash": "8bf8bf331eebab2923cac26b24f75e57953f71c1a24393401407b5e3ce996a23",
+    "receipt_schema": "road-ticket-receipt/1",
+    "version_id": "v0",
+    "ticket_index": 1,
+    "r": "2/6",
+    "receipt_status": "located",
+    "point": {
+      "segment_id": "P-01",
+      "route_id": "R",
+      "route_index": 0,
+      "order": 0,
+      "local_coordinate": 2,
+      "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+    },
+    "evidence": {
+      "valid_before_point_global": 2,
+      "route": {
+        "route_id": "R",
+        "route_index": 0,
+        "before_effective": 0,
+        "route_effective_count": 6
+      },
+      "segment": {
+        "segment_id": "P-01",
+        "route_id": "R",
+        "order": 0,
+        "before_effective_on_route": 0,
+        "before_effective_global": 0,
+        "segment_effective_count": 6,
+        "intra_rank": 2,
+        "local_coordinate": 2,
+        "valid_before_local": 2,
+        "forbidden_before_local": 0,
+        "length": 6,
+        "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+      },
+      "local_selection": {
+        "segment_id": "P-01",
+        "length": 6,
+        "effective_count": 6,
+        "intra_rank": 2,
+        "local_coordinate": 2,
+        "valid_before_local": 2,
+        "forbidden_before_local": 0,
+        "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+      }
+    },
+    "receipt": {
+      "schema": "road-ticket-receipt/1",
+      "ticket_index": 1,
+      "ticket_id": "T2",
+      "version_id": "v0",
+      "r": "2/6",
+      "r_num": "2",
+      "r_den": "6",
+      "total_effective_coordinates": 6,
+      "rank_formula": "floor((2/6) * 6)",
+      "formula_rank": 2,
+      "status": "located",
+      "global_rank": 2,
+      "point": {
+        "segment_id": "P-01",
+        "route_id": "R",
+        "route_index": 0,
+        "order": 0,
+        "local_coordinate": 2,
+        "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+      },
+      "evidence": {
+        "valid_before_point_global": 2,
+        "route": {
+          "route_id": "R",
+          "route_index": 0,
+          "before_effective": 0,
+          "route_effective_count": 6
+        },
+        "segment": {
+          "segment_id": "P-01",
+          "route_id": "R",
+          "order": 0,
+          "before_effective_on_route": 0,
+          "before_effective_global": 0,
+          "segment_effective_count": 6,
+          "intra_rank": 2,
+          "local_coordinate": 2,
+          "valid_before_local": 2,
+          "forbidden_before_local": 0,
+          "length": 6,
+          "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+        },
+        "local_selection": {
+          "segment_id": "P-01",
+          "length": 6,
+          "effective_count": 6,
+          "intra_rank": 2,
+          "local_coordinate": 2,
+          "valid_before_local": 2,
+          "forbidden_before_local": 0,
+          "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+        }
+      }
+    }
+  },
+  "bound": true,
+  "receipt": {
+    "schema": "road-ticket-receipt/1",
+    "ticket_index": 1,
+    "ticket_id": "T2",
+    "version_id": "v0",
+    "r": "2/6",
+    "r_num": "2",
+    "r_den": "6",
+    "total_effective_coordinates": 6,
+    "rank_formula": "floor((2/6) * 6)",
+    "formula_rank": 2,
+    "status": "located",
+    "global_rank": 2,
+    "point": {
+      "segment_id": "P-01",
+      "route_id": "R",
+      "route_index": 0,
+      "order": 0,
+      "local_coordinate": 2,
+      "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+    },
+    "evidence": {
+      "valid_before_point_global": 2,
+      "route": {
+        "route_id": "R",
+        "route_index": 0,
+        "before_effective": 0,
+        "route_effective_count": 6
+      },
+      "segment": {
+        "segment_id": "P-01",
+        "route_id": "R",
+        "order": 0,
+        "before_effective_on_route": 0,
+        "before_effective_global": 0,
+        "segment_effective_count": 6,
+        "intra_rank": 2,
+        "local_coordinate": 2,
+        "valid_before_local": 2,
+        "forbidden_before_local": 0,
+        "length": 6,
+        "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+      },
+      "local_selection": {
+        "segment_id": "P-01",
+        "length": 6,
+        "effective_count": 6,
+        "intra_rank": 2,
+        "local_coordinate": 2,
+        "valid_before_local": 2,
+        "forbidden_before_local": 0,
+        "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+      }
+    }
+  },
+  "receipt_hash": "8bf8bf331eebab2923cac26b24f75e57953f71c1a24393401407b5e3ce996a23",
+  "bound_version_id": "v0",
+  "original_point": {
+    "segment_id": "P-01",
+    "route_id": "R",
+    "route_index": 0,
+    "order": 0,
+    "local_coordinate": 2,
+    "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+  },
+  "origin_point": {
+    "segment_id": "P-01",
+    "route_id": "R",
+    "route_index": 0,
+    "order": 0,
+    "local_coordinate": 2,
+    "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+  },
+  "point": {
+    "segment_id": "P-01",
+    "route_id": "R",
+    "route_index": 0,
+    "order": 0,
+    "local_coordinate": 2,
+    "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+  },
+  "basis": {
+    "valid_before_point_global": 2,
+    "route": {
+      "route_id": "R",
+      "route_index": 0,
+      "before_effective": 0,
+      "route_effective_count": 6
+    },
+    "segment": {
+      "segment_id": "P-01",
+      "route_id": "R",
+      "order": 0,
+      "before_effective_on_route": 0,
+      "before_effective_global": 0,
+      "segment_effective_count": 6,
+      "intra_rank": 2,
+      "local_coordinate": 2,
+      "valid_before_local": 2,
+      "forbidden_before_local": 0,
+      "length": 6,
+      "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+    },
+    "local_selection": {
+      "segment_id": "P-01",
+      "length": 6,
+      "effective_count": 6,
+      "intra_rank": 2,
+      "local_coordinate": 2,
+      "valid_before_local": 2,
+      "forbidden_before_local": 0,
+      "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+    }
+  },
+  "evidence": {
+    "valid_before_point_global": 2,
+    "route": {
+      "route_id": "R",
+      "route_index": 0,
+      "before_effective": 0,
+      "route_effective_count": 6
+    },
+    "segment": {
+      "segment_id": "P-01",
+      "route_id": "R",
+      "order": 0,
+      "before_effective_on_route": 0,
+      "before_effective_global": 0,
+      "segment_effective_count": 6,
+      "intra_rank": 2,
+      "local_coordinate": 2,
+      "valid_before_local": 2,
+      "forbidden_before_local": 0,
+      "length": 6,
+      "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+    },
+    "local_selection": {
+      "segment_id": "P-01",
+      "length": 6,
+      "effective_count": 6,
+      "intra_rank": 2,
+      "local_coordinate": 2,
+      "valid_before_local": 2,
+      "forbidden_before_local": 0,
+      "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+    }
+  },
+  "known": true,
+  "record_count": 1,
+  "active_record_count": 1,
+  "withdrawn_count": 0,
+  "topo_order": [
+    "R5"
+  ]
+}

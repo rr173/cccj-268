@@ -1,0 +1,5 @@
+{"batch_id":"B1-base","by":"现场甲组","id":"R1","note":"按 v0 小回执到 P-01#0，到位查验","parents":[],"schema":"road-result-record/1","status":"已查验","status_code":"inspected","status_zh":"已查验","ticket_id":"T1"}
+{"batch_id":"B2-fork-left","by":"现场乙组","id":"R2","note":"离线复核后仍为已查验","parents":["R1"],"schema":"road-result-record/1","status":"已查验","status_code":"inspected","status_zh":"已查验","ticket_id":"T1"}
+{"batch_id":"B3-fork-right","by":"现场丙组","id":"R3","note":"另一个离线现场组，状态文字相同也保留为独立分支","parents":["R1"],"schema":"road-result-record/1","status":"已查验","status_code":"inspected","status_zh":"已查验","ticket_id":"T1"}
+{"batch_id":"B4-merge","by":"复核组","id":"R4","note":"两分支材料对齐，合并出一份新结果；不删除两个父分支","parents":["R2","R3"],"schema":"road-result-record/1","status":"已查验","status_code":"inspected","status_zh":"已查验","ticket_id":"T1"}
+{"batch_id":"B5-t2","by":"现场甲组","id":"R5","note":"在 P-01#2 等候超时，签人未到场","parents":[],"schema":"road-result-record/1","status":"未到场","status_code":"not_present","status_zh":"未到场","ticket_id":"T2"}

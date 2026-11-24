@@ -1826,3 +1826,43 @@ def verify_audit_bundle(bundle: Dict[str, Any]) -> Dict[str, Any]:
         "record_count": len(records),
         "receipt_verification": receipt_report,
     }
+
+
+# ---------------------------------------------------------------------------
+# Lazy re-exports of the result write-off ledger.
+#
+# ledger.py imports names from core, so importing it at module bottom would
+# create a fragile initialization order.  A module-level __getattr__ gives
+# ``from roadtool.core import ResultLedger`` semantics on demand (PEP 562).
+# ---------------------------------------------------------------------------
+
+_LEDGER_LAZY_NAMES = {
+    "ResultLedger",
+    "Ledger",
+    "LedgerStore",
+    "LedgerState",
+    "BadBatch",
+    "BatchContentConflict",
+    "RecordIdReused",
+    "MissingParent",
+    "CrossTicketParent",
+    "LedgerCycle",
+    "RecordNotFound",
+    "ReceiptBindingConflict",
+    "CorruptLedger",
+    "LedgerError",
+    "replay_ledger",
+    "add_record",
+    "import_batch",
+    "withdraw_result",
+    "ticket_status",
+    "ledger_report",
+}
+
+
+def __getattr__(name: str) -> Any:
+    if name in _LEDGER_LAZY_NAMES:
+        from . import ledger as _ledger
+
+        return getattr(_ledger, name)
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

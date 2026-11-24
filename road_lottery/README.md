@@ -1,7 +1,9 @@
 # 路面养护抽签出票与核对工具
 
 一个只依赖 Python 标准库的**离线**工具：负责按已验版资料把给定有理数 `r`
-映射成查验点、保留路径证据、在新版资料上回放同一批签号、配对变点签、通知路线变化，并导出自包含核查包。
+映射成查验点、保留路径证据、在新版资料上回放同一批签号、配对变点签、通知路线变化、
+导出自包含核查包；并提供多现场组离线核销同一签的**结果核销账本**
+（JSONL 因果记录、分叉/合并/撤回、候选与冲突待核，见第 8 节）。
 
 工具**不产生随机数**。`r` 由抽签单输入；支持 `"p/q"`、十进制精确字符串、整数、
 `{"p": ..., "q": ...}` 等形式。所有长度、里程、序号和分母均使用 Python 任意精度整数，
@@ -394,3 +396,175 @@ O(log R + log S_route + log M_segment)
 
 期初解析仍需对全部输入区间排序/合并一次，这是验证坏版和建立索引所必需的；
 工具不会按长度展开坐标空间。审计导出为了形成自包含材料，会显式遍历一次该版引用的对象。
+
+---
+
+## 8. 结果核销账本（多现场组离线核销）
+
+多个现场组会离线查验**同一张签**，不能按上传先后互相覆盖。账本把各组结果
+保存为只追加的 JSONL 因果记录，绑定已出票回执，输出每签当前结果、**原出票点**
+和**依据**；路线后续换版移动出票点时，账本里的原点与证据快照不会被改写。
+
+跑一个用小回执做的完整演示（分叉、同状态文字冲突、多父合并、撤回、五类失败批次、
+独立重放一致性）：
+
+```bash
+examples/run_ledger_demo.sh
+# 产物见 examples/output/ledger/，JSONL 账本见
+# examples/output/ledger/demo_ledger/{records,withdrawals,batches}.jsonl
+```
+
+### 8.1 账本目录
+
+```text
+my-ledger/
+  records.jsonl       # 结果记录，每行一条（主 JSONL 产物）
+  withdrawals.jsonl   # 撤回事件（不删记录/边）
+  batches.jsonl       # 批次号 -> 内容指纹、记录 ID
+  bindings.json       # 签 -> 已出票回执快照（首次绑定不可改写）
+```
+
+重开目录或用 `replay_ledger()` / `road ledger-replay` 从 JSONL 独立重放，报告完全一致；
+全部输出顺序按 ID/拓扑序确定，不依赖输入行序、时间戳或随机数。
+
+除目录形式外，`--ledger path/to/ledger.jsonl`（或以 `.jsonl` 结尾的路径）使用
+**单文件事件日志**：每行一个带 `kind`（`record`/`withdrawal`/`batch`/`binding`）
+的 JSON 事件，语义与目录形式完全相同。
+
+### 8.2 绑定已出票回执
+
+```bash
+# 先用极小框出一份小回执
+python3 -I road.py init --repo "$REPO" --input examples/ledger_frame.json --version-id v0
+python3 -I road.py draw --repo "$REPO" --version v0 \
+  --tickets examples/ledger_tickets.json --out receipts_v0_small.json
+
+python3 -I road.py ledger-bind --ledger my-ledger \
+  --receipts receipts_v0_small.json
+```
+
+绑定后每签报告含：
+
+- `original_point` / `origin_point`：绑定时刻回执上的原出票点；
+- `basis`：回执的完整路径证据（与第 4 节相同）；
+- `receipt` / `receipt_hash` / `bound_version_id`：完整原回执与哈希。
+
+同一回执重复绑定为 no-op；同一签绑定**不同**回执会以
+`receipt_binding_conflict` 拒绝——即使路线已出 v1 且点已移动，原出票点也
+保持 v0 快照不变（见演示 `16_rebind_rejected.json`、`17_origin_still_v0_point.json`）。
+
+### 8.3 结果记录与批次格式
+
+批次文件：
+
+```json
+{
+  "batch_id": "B2-fork-left",
+  "records": [
+    {
+      "id": "R2",
+      "ticket_id": "T1",
+      "status": "已查验",
+      "parents": ["R1"],
+      "by": "现场乙组",
+      "note": "可保留任意附加字段"
+    }
+  ]
+}
+```
+
+- `id`：结果记录唯一 ID（字符串或整数），全局不得重用；
+- `ticket_id`：签身份；
+- `status`：`"已查验"` 或 `"未到场"`（也接受 `inspected`/`not_present`/
+  `absent` 等英文别名；输入状态原文保留在 `status`，规范码在 `status_code`）；
+- `parents`：它接续的零个或多个旧结果 ID，可来自旧批或本批，允许前向引用，
+  因此**本批行顺序不影响结果**；多父即把这些分支合并为一份新结果。
+
+导入：
+
+```bash
+python3 -I road.py ledger-import --ledger my-ledger --input batch.json
+# 也可：--batch-id B1（输入没写 batch_id 时）、--receipts r.json、
+#       --require-bound-receipt
+```
+
+整批先验明再追加，下列情况**整批拒绝**，`records.jsonl` 不留任何行：
+
+| 情况 | 错误码 |
+|---|---|
+| 同批次号但内容不同 | `batch_content_conflict` |
+| 记录 ID 重用（批内或跨批） | `record_id_reused` |
+| 父记录属于另一签 | `cross_ticket_parent` |
+| 父记录不存在 | `missing_parent` |
+| 因果图有环（含自父） | `cycle_detected` |
+
+同批次号 + 同内容（记录行重排也算同内容，指纹按 ID 排序计算）重送是
+`noop: true`，不重复入账。
+
+### 8.4 候选、冲突与撤回规则
+
+- **候选** = 未撤回，且不存在其他**未撤回后代**的结果；
+- 后代闭包沿 `parents` 反向求传递闭包，**穿过已撤回记录仍然有效**
+  （`A <- W(撤回) <- C(活跃)` 时，C 仍压制 A）；
+- 父记录必须同签；图整体无环；
+- 撤回按记录 ID：记录与因果边都保留，也**不自动撤回后代**；撤回事件追加在
+  `withdrawals.jsonl`，重复撤回为幂等 no-op。
+
+每签结论：
+
+- 0 个候选 → `state: "no_candidate"`，`status: "未查验"`（包括从未有记录、
+  或记录全部被撤回）；
+- 恰 1 个候选 → `state: "unique"`，采用该记录自己的状态文字；
+- 多个候选 → `state: "conflict"`，`status: "冲突待核"`，**即使状态文字相同
+  也不自动合并**。
+
+查询：
+
+```bash
+python3 -I road.py ledger-ticket --ledger my-ledger --ticket T1
+python3 -I road.py ledger-report --ledger my-ledger --out all.json
+python3 -I road.py ledger-withdraw --ledger my-ledger \
+  --record R3 --reason "串签" --by 核销员
+python3 -I road.py ledger-check --ledger my-ledger
+# 同样支持嵌套写法：road ledger import|ticket|report|withdraw|check ...
+```
+
+`ticket` 报告的 `candidates[]` 中每个候选都带完整 `source_chain`
+（全部祖先，拓扑序，含已撤回节点及其 `withdrawal` 事件）和
+`source_chain_ids`；`decision_basis` 概述判定规则与候选链。
+
+典型演化（演示产物编号对应 `examples/output/ledger/`）：
+
+```text
+R1(已查验)
+ ├─ R2(已查验) ┐
+ └─ R3(已查验) ┴─ R4(多父合并, 已查验)
+```
+
+1. R2、R3 并存 → 两个候选 → `冲突待核`（状态文字相同也冲突）；
+2. 导入多父 R4 → 仅 R4 候选，采用已查验，来源链 `[R1,R2,R3,R4]`；
+3. 撤回 R4 → R2、R3 重新成为候选（合并撤回不吞掉分支）；
+4. 撤回 R3 → R2 唯一候选（另一分支不丢失，R1 仍被 R2 压制）；
+5. 再撤回 R2 → R1 恢复为唯一候选。
+
+### 8.5 Python API
+
+```python
+from roadtool.ledger import ResultLedger, replay_ledger
+
+ledger = ResultLedger("/tmp/my-ledger")          # 不存在会自动建空账本
+ledger.bind_receipts_doc(receipts_doc)           # 原出票点快照，不可改写
+ledger.import_batch({"batch_id": "B1", "records": [...]})
+ledger.withdraw("R3", reason="串签")
+
+ticket = ledger.ticket_report("T1")              # 当前结果+候选来源链+原点依据
+all_report = ledger.report()
+assert ledger.check()["ok"]
+
+same_report = replay_ledger("/tmp/my-ledger")    # 独立 JSONL 重放
+```
+
+常用别名：`Ledger`/`WriteOffLedger`/`VerificationLedger`，方法
+`apply_batch`、`withdraw_result`、`ticket_status`、`current_results`，
+以及函数式 `import_batch(path, batch)`、`withdraw_result(path, rid)`、
+`ticket_status(path, tid)`、`ledger_report(path)`。

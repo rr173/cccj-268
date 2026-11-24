@@ -1,0 +1,10 @@
+{
+  "schema": "road-ledger-check/1",
+  "ok": true,
+  "issue_count": 0,
+  "issues": [],
+  "record_count": 5,
+  "batch_count": 5,
+  "withdrawn_count": 4,
+  "bound_receipt_count": 3
+}

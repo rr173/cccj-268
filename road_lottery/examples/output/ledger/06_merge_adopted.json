@@ -1,0 +1,623 @@
+{
+  "schema": "road-ledger-ticket-report/1",
+  "ticket_id": "T1",
+  "state": "unique",
+  "state_code": "unique",
+  "state_zh": "唯一候选",
+  "status": "已查验",
+  "current_status": "已查验",
+  "current_result": {
+    "batch_id": "B4-merge",
+    "by": "复核组",
+    "id": "R4",
+    "note": "两分支材料对齐，合并出一份新结果；不删除两个父分支",
+    "parents": [
+      "R2",
+      "R3"
+    ],
+    "schema": "road-result-record/1",
+    "status": "已查验",
+    "status_code": "inspected",
+    "status_zh": "已查验",
+    "ticket_id": "T1",
+    "record_id": "R4",
+    "parent_ids": [
+      "R2",
+      "R3"
+    ],
+    "withdrawn": false,
+    "withdrawal": null,
+    "source_chain_ids": [
+      "R1",
+      "R2",
+      "R3",
+      "R4"
+    ],
+    "source_chain": [
+      {
+        "batch_id": "B1-base",
+        "by": "现场甲组",
+        "id": "R1",
+        "note": "按 v0 小回执到 P-01#0，到位查验",
+        "parents": [],
+        "schema": "road-result-record/1",
+        "status": "已查验",
+        "status_code": "inspected",
+        "status_zh": "已查验",
+        "ticket_id": "T1",
+        "record_id": "R1",
+        "parent_ids": [],
+        "withdrawn": false,
+        "withdrawal": null
+      },
+      {
+        "batch_id": "B2-fork-left",
+        "by": "现场乙组",
+        "id": "R2",
+        "note": "离线复核后仍为已查验",
+        "parents": [
+          "R1"
+        ],
+        "schema": "road-result-record/1",
+        "status": "已查验",
+        "status_code": "inspected",
+        "status_zh": "已查验",
+        "ticket_id": "T1",
+        "record_id": "R2",
+        "parent_ids": [
+          "R1"
+        ],
+        "withdrawn": false,
+        "withdrawal": null
+      },
+      {
+        "batch_id": "B3-fork-right",
+        "by": "现场丙组",
+        "id": "R3",
+        "note": "另一个离线现场组，状态文字相同也保留为独立分支",
+        "parents": [
+          "R1"
+        ],
+        "schema": "road-result-record/1",
+        "status": "已查验",
+        "status_code": "inspected",
+        "status_zh": "已查验",
+        "ticket_id": "T1",
+        "record_id": "R3",
+        "parent_ids": [
+          "R1"
+        ],
+        "withdrawn": false,
+        "withdrawal": null
+      },
+      {
+        "batch_id": "B4-merge",
+        "by": "复核组",
+        "id": "R4",
+        "note": "两分支材料对齐，合并出一份新结果；不删除两个父分支",
+        "parents": [
+          "R2",
+          "R3"
+        ],
+        "schema": "road-result-record/1",
+        "status": "已查验",
+        "status_code": "inspected",
+        "status_zh": "已查验",
+        "ticket_id": "T1",
+        "record_id": "R4",
+        "parent_ids": [
+          "R2",
+          "R3"
+        ],
+        "withdrawn": false,
+        "withdrawal": null
+      }
+    ]
+  },
+  "adopted": {
+    "batch_id": "B4-merge",
+    "by": "复核组",
+    "id": "R4",
+    "note": "两分支材料对齐，合并出一份新结果；不删除两个父分支",
+    "parents": [
+      "R2",
+      "R3"
+    ],
+    "schema": "road-result-record/1",
+    "status": "已查验",
+    "status_code": "inspected",
+    "status_zh": "已查验",
+    "ticket_id": "T1",
+    "record_id": "R4",
+    "parent_ids": [
+      "R2",
+      "R3"
+    ],
+    "withdrawn": false,
+    "withdrawal": null,
+    "source_chain_ids": [
+      "R1",
+      "R2",
+      "R3",
+      "R4"
+    ],
+    "source_chain": [
+      {
+        "batch_id": "B1-base",
+        "by": "现场甲组",
+        "id": "R1",
+        "note": "按 v0 小回执到 P-01#0，到位查验",
+        "parents": [],
+        "schema": "road-result-record/1",
+        "status": "已查验",
+        "status_code": "inspected",
+        "status_zh": "已查验",
+        "ticket_id": "T1",
+        "record_id": "R1",
+        "parent_ids": [],
+        "withdrawn": false,
+        "withdrawal": null
+      },
+      {
+        "batch_id": "B2-fork-left",
+        "by": "现场乙组",
+        "id": "R2",
+        "note": "离线复核后仍为已查验",
+        "parents": [
+          "R1"
+        ],
+        "schema": "road-result-record/1",
+        "status": "已查验",
+        "status_code": "inspected",
+        "status_zh": "已查验",
+        "ticket_id": "T1",
+        "record_id": "R2",
+        "parent_ids": [
+          "R1"
+        ],
+        "withdrawn": false,
+        "withdrawal": null
+      },
+      {
+        "batch_id": "B3-fork-right",
+        "by": "现场丙组",
+        "id": "R3",
+        "note": "另一个离线现场组，状态文字相同也保留为独立分支",
+        "parents": [
+          "R1"
+        ],
+        "schema": "road-result-record/1",
+        "status": "已查验",
+        "status_code": "inspected",
+        "status_zh": "已查验",
+        "ticket_id": "T1",
+        "record_id": "R3",
+        "parent_ids": [
+          "R1"
+        ],
+        "withdrawn": false,
+        "withdrawal": null
+      },
+      {
+        "batch_id": "B4-merge",
+        "by": "复核组",
+        "id": "R4",
+        "note": "两分支材料对齐，合并出一份新结果；不删除两个父分支",
+        "parents": [
+          "R2",
+          "R3"
+        ],
+        "schema": "road-result-record/1",
+        "status": "已查验",
+        "status_code": "inspected",
+        "status_zh": "已查验",
+        "ticket_id": "T1",
+        "record_id": "R4",
+        "parent_ids": [
+          "R2",
+          "R3"
+        ],
+        "withdrawn": false,
+        "withdrawal": null
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "batch_id": "B4-merge",
+      "by": "复核组",
+      "id": "R4",
+      "note": "两分支材料对齐，合并出一份新结果；不删除两个父分支",
+      "parents": [
+        "R2",
+        "R3"
+      ],
+      "schema": "road-result-record/1",
+      "status": "已查验",
+      "status_code": "inspected",
+      "status_zh": "已查验",
+      "ticket_id": "T1",
+      "record_id": "R4",
+      "parent_ids": [
+        "R2",
+        "R3"
+      ],
+      "withdrawn": false,
+      "withdrawal": null,
+      "source_chain_ids": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "source_chain": [
+        {
+          "batch_id": "B1-base",
+          "by": "现场甲组",
+          "id": "R1",
+          "note": "按 v0 小回执到 P-01#0，到位查验",
+          "parents": [],
+          "schema": "road-result-record/1",
+          "status": "已查验",
+          "status_code": "inspected",
+          "status_zh": "已查验",
+          "ticket_id": "T1",
+          "record_id": "R1",
+          "parent_ids": [],
+          "withdrawn": false,
+          "withdrawal": null
+        },
+        {
+          "batch_id": "B2-fork-left",
+          "by": "现场乙组",
+          "id": "R2",
+          "note": "离线复核后仍为已查验",
+          "parents": [
+            "R1"
+          ],
+          "schema": "road-result-record/1",
+          "status": "已查验",
+          "status_code": "inspected",
+          "status_zh": "已查验",
+          "ticket_id": "T1",
+          "record_id": "R2",
+          "parent_ids": [
+            "R1"
+          ],
+          "withdrawn": false,
+          "withdrawal": null
+        },
+        {
+          "batch_id": "B3-fork-right",
+          "by": "现场丙组",
+          "id": "R3",
+          "note": "另一个离线现场组，状态文字相同也保留为独立分支",
+          "parents": [
+            "R1"
+          ],
+          "schema": "road-result-record/1",
+          "status": "已查验",
+          "status_code": "inspected",
+          "status_zh": "已查验",
+          "ticket_id": "T1",
+          "record_id": "R3",
+          "parent_ids": [
+            "R1"
+          ],
+          "withdrawn": false,
+          "withdrawal": null
+        },
+        {
+          "batch_id": "B4-merge",
+          "by": "复核组",
+          "id": "R4",
+          "note": "两分支材料对齐，合并出一份新结果；不删除两个父分支",
+          "parents": [
+            "R2",
+            "R3"
+          ],
+          "schema": "road-result-record/1",
+          "status": "已查验",
+          "status_code": "inspected",
+          "status_zh": "已查验",
+          "ticket_id": "T1",
+          "record_id": "R4",
+          "parent_ids": [
+            "R2",
+            "R3"
+          ],
+          "withdrawn": false,
+          "withdrawal": null
+        }
+      ]
+    }
+  ],
+  "candidate_ids": [
+    "R4"
+  ],
+  "candidate_count": 1,
+  "has_candidate": true,
+  "conflict": false,
+  "pending_review": false,
+  "decision_basis": {
+    "rule": "候选=未撤回且不存在其他未撤回后代的结果；后代闭包穿过已撤回记录仍然有效；0 候选为未查验，1 候选采用其状态，多候选为冲突待核",
+    "state": "unique",
+    "candidate_ids": [
+      "R4"
+    ],
+    "adopted_record_id": "R4",
+    "candidate_source_chain_ids": [
+      [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ]
+    ]
+  },
+  "inspected": true,
+  "binding": {
+    "schema": "road-ticket-binding/1",
+    "ticket_id": "T1",
+    "receipt_hash": "52abc8e7ba5928b12837bb459bdbe4394c2390f8185fdd07cb2cce6de31040d1",
+    "receipt_schema": "road-ticket-receipt/1",
+    "version_id": "v0",
+    "ticket_index": 0,
+    "r": "0/1",
+    "receipt_status": "located",
+    "point": {
+      "segment_id": "P-01",
+      "route_id": "R",
+      "route_index": 0,
+      "order": 0,
+      "local_coordinate": 0,
+      "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+    },
+    "evidence": {
+      "valid_before_point_global": 0,
+      "route": {
+        "route_id": "R",
+        "route_index": 0,
+        "before_effective": 0,
+        "route_effective_count": 6
+      },
+      "segment": {
+        "segment_id": "P-01",
+        "route_id": "R",
+        "order": 0,
+        "before_effective_on_route": 0,
+        "before_effective_global": 0,
+        "segment_effective_count": 6,
+        "intra_rank": 0,
+        "local_coordinate": 0,
+        "valid_before_local": 0,
+        "forbidden_before_local": 0,
+        "length": 6,
+        "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+      },
+      "local_selection": {
+        "segment_id": "P-01",
+        "length": 6,
+        "effective_count": 6,
+        "intra_rank": 0,
+        "local_coordinate": 0,
+        "valid_before_local": 0,
+        "forbidden_before_local": 0,
+        "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+      }
+    },
+    "receipt": {
+      "schema": "road-ticket-receipt/1",
+      "ticket_index": 0,
+      "ticket_id": "T1",
+      "version_id": "v0",
+      "r": "0/1",
+      "r_num": "0",
+      "r_den": "1",
+      "total_effective_coordinates": 6,
+      "rank_formula": "floor((0/1) * 6)",
+      "formula_rank": 0,
+      "status": "located",
+      "global_rank": 0,
+      "point": {
+        "segment_id": "P-01",
+        "route_id": "R",
+        "route_index": 0,
+        "order": 0,
+        "local_coordinate": 0,
+        "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+      },
+      "evidence": {
+        "valid_before_point_global": 0,
+        "route": {
+          "route_id": "R",
+          "route_index": 0,
+          "before_effective": 0,
+          "route_effective_count": 6
+        },
+        "segment": {
+          "segment_id": "P-01",
+          "route_id": "R",
+          "order": 0,
+          "before_effective_on_route": 0,
+          "before_effective_global": 0,
+          "segment_effective_count": 6,
+          "intra_rank": 0,
+          "local_coordinate": 0,
+          "valid_before_local": 0,
+          "forbidden_before_local": 0,
+          "length": 6,
+          "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+        },
+        "local_selection": {
+          "segment_id": "P-01",
+          "length": 6,
+          "effective_count": 6,
+          "intra_rank": 0,
+          "local_coordinate": 0,
+          "valid_before_local": 0,
+          "forbidden_before_local": 0,
+          "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+        }
+      }
+    }
+  },
+  "bound": true,
+  "receipt": {
+    "schema": "road-ticket-receipt/1",
+    "ticket_index": 0,
+    "ticket_id": "T1",
+    "version_id": "v0",
+    "r": "0/1",
+    "r_num": "0",
+    "r_den": "1",
+    "total_effective_coordinates": 6,
+    "rank_formula": "floor((0/1) * 6)",
+    "formula_rank": 0,
+    "status": "located",
+    "global_rank": 0,
+    "point": {
+      "segment_id": "P-01",
+      "route_id": "R",
+      "route_index": 0,
+      "order": 0,
+      "local_coordinate": 0,
+      "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+    },
+    "evidence": {
+      "valid_before_point_global": 0,
+      "route": {
+        "route_id": "R",
+        "route_index": 0,
+        "before_effective": 0,
+        "route_effective_count": 6
+      },
+      "segment": {
+        "segment_id": "P-01",
+        "route_id": "R",
+        "order": 0,
+        "before_effective_on_route": 0,
+        "before_effective_global": 0,
+        "segment_effective_count": 6,
+        "intra_rank": 0,
+        "local_coordinate": 0,
+        "valid_before_local": 0,
+        "forbidden_before_local": 0,
+        "length": 6,
+        "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+      },
+      "local_selection": {
+        "segment_id": "P-01",
+        "length": 6,
+        "effective_count": 6,
+        "intra_rank": 0,
+        "local_coordinate": 0,
+        "valid_before_local": 0,
+        "forbidden_before_local": 0,
+        "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+      }
+    }
+  },
+  "receipt_hash": "52abc8e7ba5928b12837bb459bdbe4394c2390f8185fdd07cb2cce6de31040d1",
+  "bound_version_id": "v0",
+  "original_point": {
+    "segment_id": "P-01",
+    "route_id": "R",
+    "route_index": 0,
+    "order": 0,
+    "local_coordinate": 0,
+    "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+  },
+  "origin_point": {
+    "segment_id": "P-01",
+    "route_id": "R",
+    "route_index": 0,
+    "order": 0,
+    "local_coordinate": 0,
+    "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+  },
+  "point": {
+    "segment_id": "P-01",
+    "route_id": "R",
+    "route_index": 0,
+    "order": 0,
+    "local_coordinate": 0,
+    "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+  },
+  "basis": {
+    "valid_before_point_global": 0,
+    "route": {
+      "route_id": "R",
+      "route_index": 0,
+      "before_effective": 0,
+      "route_effective_count": 6
+    },
+    "segment": {
+      "segment_id": "P-01",
+      "route_id": "R",
+      "order": 0,
+      "before_effective_on_route": 0,
+      "before_effective_global": 0,
+      "segment_effective_count": 6,
+      "intra_rank": 0,
+      "local_coordinate": 0,
+      "valid_before_local": 0,
+      "forbidden_before_local": 0,
+      "length": 6,
+      "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+    },
+    "local_selection": {
+      "segment_id": "P-01",
+      "length": 6,
+      "effective_count": 6,
+      "intra_rank": 0,
+      "local_coordinate": 0,
+      "valid_before_local": 0,
+      "forbidden_before_local": 0,
+      "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+    }
+  },
+  "evidence": {
+    "valid_before_point_global": 0,
+    "route": {
+      "route_id": "R",
+      "route_index": 0,
+      "before_effective": 0,
+      "route_effective_count": 6
+    },
+    "segment": {
+      "segment_id": "P-01",
+      "route_id": "R",
+      "order": 0,
+      "before_effective_on_route": 0,
+      "before_effective_global": 0,
+      "segment_effective_count": 6,
+      "intra_rank": 0,
+      "local_coordinate": 0,
+      "valid_before_local": 0,
+      "forbidden_before_local": 0,
+      "length": 6,
+      "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+    },
+    "local_selection": {
+      "segment_id": "P-01",
+      "length": 6,
+      "effective_count": 6,
+      "intra_rank": 0,
+      "local_coordinate": 0,
+      "valid_before_local": 0,
+      "forbidden_before_local": 0,
+      "record_hash": "cb6e8e9cd7b147fa8a5f306f8acc3c81333cbdabc4d49bc1c816fe8e0d6d6fe5"
+    }
+  },
+  "known": true,
+  "record_count": 4,
+  "active_record_count": 4,
+  "withdrawn_count": 0,
+  "topo_order": [
+    "R1",
+    "R2",
+    "R3",
+    "R4"
+  ]
+}

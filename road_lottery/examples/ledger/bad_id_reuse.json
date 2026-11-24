@@ -1,0 +1,7 @@
+{
+  "batch_id": "B-bad-reuse",
+  "comment": "失败批次：R1 已在 B1-base 中使用，记录 ID 重用，整批拒绝。",
+  "records": [
+    {"id": "R1", "ticket_id": "T9", "status": "已查验", "parents": []}
+  ]
+}

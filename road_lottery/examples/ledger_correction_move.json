@@ -1,0 +1,16 @@
+{
+  "base_version": "v0",
+  "comment": "后续换版：P-01 前两个整数坐标禁入，出票点整体移动；用于证明账本里的原出票点不被改写。",
+  "corrections": [
+    {
+      "op": "replace",
+      "segment": {
+        "id": "P-01",
+        "route": "R",
+        "order": 0,
+        "length": 6,
+        "forbidden": [[0, 2]]
+      }
+    }
+  ]
+}

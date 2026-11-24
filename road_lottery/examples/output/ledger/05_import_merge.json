@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "noop": false,
+  "batch_id": "B4-merge",
+  "imported": 1,
+  "record_ids": [
+    "R4"
+  ],
+  "content_hash": "ae6224a19cd5270ca8c1804d29af2781d1f05a6f7db8963eb52098cd68442070"
+}

@@ -24,6 +24,7 @@ from .core import (
     verify_audit_bundle,
     verify_receipts_doc,
 )
+from .ledger import ResultLedger
 
 
 def load_json_input(path: str) -> Any:
@@ -240,6 +241,85 @@ def cmd_list_versions(args: argparse.Namespace) -> int:
 
 
 # ---------------------------------------------------------------------------
+# Ledger command handlers
+# ---------------------------------------------------------------------------
+
+
+def open_ledger(args: argparse.Namespace) -> ResultLedger:
+    if not getattr(args, "ledger", None):
+        raise RoadToolError("请用 --ledger 指定结果核销账本目录")
+    return ResultLedger(args.ledger)
+
+
+def cmd_ledger_bind(args: argparse.Namespace) -> int:
+    ledger = open_ledger(args)
+    doc = load_json_input(args.receipts)
+    summary = ledger.bind_receipts_doc(doc)
+    return emit(summary, args.out)
+
+
+def cmd_ledger_import(args: argparse.Namespace) -> int:
+    ledger = open_ledger(args)
+    if args.receipts:
+        # Binding happens first; a binding conflict aborts before the batch.
+        ledger.bind_receipts_doc(load_json_input(args.receipts))
+    raw = load_json_input(args.input)
+    summary = ledger.import_batch(
+        raw,
+        batch_id=args.batch_id,
+        require_bound_receipt=args.require_bound_receipt,
+    )
+    return emit(summary, args.out)
+
+
+def cmd_ledger_withdraw(args: argparse.Namespace) -> int:
+    ledger = open_ledger(args)
+    if getattr(args, "input", None):
+        summary = ledger.withdraw_many(load_json_input(args.input))
+    else:
+        if not args.record:
+            raise RoadToolError("撤回需要 --record <ID> 或 --input <撤回列表 JSON>")
+        summary = ledger.withdraw(
+            args.record,
+            reason=args.reason,
+            by=args.by,
+            withdrawal_id=args.withdrawal_id,
+        )
+    return emit(summary, args.out)
+
+
+def cmd_ledger_ticket(args: argparse.Namespace) -> int:
+    ledger = open_ledger(args)
+    report = ledger.ticket_report(args.ticket)
+    return emit(report, args.out)
+
+
+def cmd_ledger_report(args: argparse.Namespace) -> int:
+    ledger = open_ledger(args)
+    report = ledger.report()
+    return emit(report, args.out)
+
+
+def cmd_ledger_check(args: argparse.Namespace) -> int:
+    ledger = open_ledger(args)
+    report = ledger.check()
+    if args.out:
+        emit(report, args.out)
+    else:
+        emit(report)
+    return 0 if report["ok"] else 1
+
+
+def cmd_ledger_replay(args: argparse.Namespace) -> int:
+    # Rebuild purely from the JSONL/JSON persistence, without reusing any
+    # in-memory state from an already-open ledger object.
+    from .ledger import replay_ledger
+
+    report = replay_ledger(args.ledger)
+    return emit(report, args.out)
+
+
+# ---------------------------------------------------------------------------
 # Parser
 # ---------------------------------------------------------------------------
 
@@ -322,6 +402,137 @@ def build_parser() -> argparse.ArgumentParser:
 
     p_list = sub.add_parser("list-versions", parents=[repo_parent])
     p_list.set_defaults(handler=cmd_list_versions)
+
+    # -- Result write-off ledger -------------------------------------------
+
+    ledger_parent = argparse.ArgumentParser(add_help=False)
+    ledger_parent.add_argument("--ledger", required=True, help="结果核销账本目录（JSONL）")
+
+    p_bind = sub.add_parser(
+        "ledger-bind",
+        parents=[ledger_parent],
+        aliases=["bind-receipts"],
+        help="把已出票回执绑定到账本（每签原出票点/依据不可改写）",
+    )
+    p_bind.add_argument("--receipts", required=True, help="出票回执 JSON（整份/单张/列表）")
+    p_bind.add_argument("--out")
+    p_bind.set_defaults(handler=cmd_ledger_bind)
+
+    p_import = sub.add_parser(
+        "ledger-import",
+        parents=[ledger_parent],
+        aliases=["import-batch"],
+        help="导入一个结果批次（同号同内容幂等；坏批整批拒绝）",
+    )
+    p_import.add_argument("--input", required=True, help="批次 JSON：{batch_id, records:[...]}")
+    p_import.add_argument("--batch-id", help="批次号；缺省读取输入中的 batch_id/id")
+    p_import.add_argument(
+        "--receipts", help="可选：导入前先绑定这份已出票回执"
+    )
+    p_import.add_argument(
+        "--require-bound-receipt",
+        action="store_true",
+        help="拒绝导入没有绑定出票回执的签",
+    )
+    p_import.add_argument("--out")
+    p_import.set_defaults(handler=cmd_ledger_import)
+
+    p_wd = sub.add_parser(
+        "ledger-withdraw",
+        parents=[ledger_parent],
+        aliases=["withdraw", "withdraw-result"],
+        help="按记录 ID 撤回结果（不删记录/边，不连坐后代）",
+    )
+    p_wd.add_argument("--record", help="要撤回的结果记录 ID")
+    p_wd.add_argument("--input", help="批量撤回 JSON：ID 列表或 {withdrawals:[...]}")
+    p_wd.add_argument("--reason", help="撤回原因（可选，单条撤回）")
+    p_wd.add_argument("--by", help="撤回操作人/组（可选）")
+    p_wd.add_argument("--withdrawal-id", help="撤回事件自身 ID（可选）")
+    p_wd.add_argument("--out")
+    p_wd.set_defaults(handler=cmd_ledger_withdraw)
+
+    p_ticket = sub.add_parser(
+        "ledger-ticket",
+        parents=[ledger_parent],
+        aliases=["ticket-status"],
+        help="输出某签当前结果、候选完整来源链、原出票点和依据",
+    )
+    p_ticket.add_argument("--ticket", required=True, help="签身份 ticket_id")
+    p_ticket.add_argument("--out")
+    p_ticket.set_defaults(handler=cmd_ledger_ticket)
+
+    p_report = sub.add_parser(
+        "ledger-report",
+        parents=[ledger_parent],
+        aliases=["ledger-status"],
+        help="输出账本内全部签的当前核销结果",
+    )
+    p_report.add_argument("--out")
+    p_report.set_defaults(handler=cmd_ledger_report)
+
+    p_check = sub.add_parser(
+        "ledger-check",
+        parents=[ledger_parent],
+        help="重放 JSONL 并核对账本内部一致性/指纹",
+    )
+    p_check.add_argument("--out")
+    p_check.set_defaults(handler=cmd_ledger_check)
+
+    p_replay = sub.add_parser(
+        "ledger-replay",
+        parents=[ledger_parent],
+        aliases=["replay-ledger"],
+        help="不使用内存状态，直接从 JSONL 独立重放并输出全量报告",
+    )
+    p_replay.add_argument("--out")
+    p_replay.set_defaults(handler=cmd_ledger_replay)
+
+    # Nested spelling: ``road ledger <action> ...`` mirrors the flat commands.
+    p_ledger = sub.add_parser(
+        "ledger", help="结果核销账本：绑定回执/导入批次/撤回/查询"
+    )
+    ledger_sub = p_ledger.add_subparsers(dest="ledger_action", required=True)
+
+    n_bind = ledger_sub.add_parser("bind", help=cmd_ledger_bind.__doc__ or "")
+    n_bind.add_argument("--ledger", required=True)
+    n_bind.add_argument("--receipts", required=True)
+    n_bind.add_argument("--out")
+    n_bind.set_defaults(handler=cmd_ledger_bind)
+
+    n_import = ledger_sub.add_parser("import", help="导入结果批次")
+    n_import.add_argument("--ledger", required=True)
+    n_import.add_argument("--input", required=True)
+    n_import.add_argument("--batch-id")
+    n_import.add_argument("--receipts")
+    n_import.add_argument("--require-bound-receipt", action="store_true")
+    n_import.add_argument("--out")
+    n_import.set_defaults(handler=cmd_ledger_import)
+
+    n_wd = ledger_sub.add_parser("withdraw", help="按记录 ID 撤回结果")
+    n_wd.add_argument("--ledger", required=True)
+    n_wd.add_argument("--record")
+    n_wd.add_argument("--input")
+    n_wd.add_argument("--reason")
+    n_wd.add_argument("--by")
+    n_wd.add_argument("--withdrawal-id")
+    n_wd.add_argument("--out")
+    n_wd.set_defaults(handler=cmd_ledger_withdraw)
+
+    n_ticket = ledger_sub.add_parser("ticket", help="单签核销结果")
+    n_ticket.add_argument("--ledger", required=True)
+    n_ticket.add_argument("--ticket", required=True)
+    n_ticket.add_argument("--out")
+    n_ticket.set_defaults(handler=cmd_ledger_ticket)
+
+    n_report = ledger_sub.add_parser("report", help="全部签核销结果")
+    n_report.add_argument("--ledger", required=True)
+    n_report.add_argument("--out")
+    n_report.set_defaults(handler=cmd_ledger_report)
+
+    n_check = ledger_sub.add_parser("check", help="JSONL 一致性自检")
+    n_check.add_argument("--ledger", required=True)
+    n_check.add_argument("--out")
+    n_check.set_defaults(handler=cmd_ledger_check)
 
     return parser
 

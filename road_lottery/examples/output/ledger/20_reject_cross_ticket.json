@@ -1,0 +1,1 @@
+{"ok": false, "error": "记录 X1 属于签 T1，但其父记录 R5 属于另一签 T2；跨签引用整批拒绝", "code": "cross_ticket_parent"}

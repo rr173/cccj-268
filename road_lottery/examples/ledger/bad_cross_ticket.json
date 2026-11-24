@@ -1,0 +1,7 @@
+{
+  "batch_id": "B-bad-cross-ticket",
+  "comment": "失败批次：X1 属于 T1，却以 T2 的 R5 为父，跨签引用，整批拒绝。",
+  "records": [
+    {"id": "X1", "ticket_id": "T1", "status": "已查验", "parents": ["R5"]}
+  ]
+}

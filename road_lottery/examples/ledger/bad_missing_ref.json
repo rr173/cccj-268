@@ -1,0 +1,7 @@
+{
+  "batch_id": "B-bad-missing-ref",
+  "comment": "失败批次：父记录 GHOST 不存在，缺失引用，整批拒绝。",
+  "records": [
+    {"id": "X2", "ticket_id": "T1", "status": "已查验", "parents": ["GHOST"]}
+  ]
+}

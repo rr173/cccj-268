@@ -1,0 +1,14 @@
+{
+  "batch_id": "B1-base",
+  "comment": "根结果：甲组在 T1 的原出票点 P-01#0 查验，状态已查验。",
+  "records": [
+    {
+      "id": "R1",
+      "ticket_id": "T1",
+      "status": "已查验",
+      "parents": [],
+      "by": "现场甲组",
+      "note": "按 v0 小回执到 P-01#0，到位查验"
+    }
+  ]
+}

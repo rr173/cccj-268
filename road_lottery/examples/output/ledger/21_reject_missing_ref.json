@@ -1,0 +1,1 @@
+{"ok": false, "error": "记录 X2 接续的父记录 GHOST 不存在（缺失引用）；整批拒绝", "code": "missing_parent"}

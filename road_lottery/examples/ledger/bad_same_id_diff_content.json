@@ -1,0 +1,7 @@
+{
+  "batch_id": "B1-base",
+  "comment": "失败批次：批次号与 batch_1 相同，但内容不同（状态被改），必须整批拒绝。",
+  "records": [
+    {"id": "R1", "ticket_id": "T1", "status": "未到场", "parents": []}
+  ]
+}

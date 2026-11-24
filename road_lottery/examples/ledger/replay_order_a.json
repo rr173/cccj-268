@@ -1,0 +1,9 @@
+{
+  "batch_id": "RM-reorder",
+  "comment": "独立重放 A：合并记录 R4 故意排在最前（前向引用本批 R2/R3）。",
+  "records": [
+    {"id": "RM4", "ticket_id": "T1", "status": "已查验", "parents": ["RM2", "RM3"]},
+    {"id": "RM2", "ticket_id": "T1", "status": "已查验", "parents": ["R1"]},
+    {"id": "RM3", "ticket_id": "T1", "status": "已查验", "parents": ["R1"]}
+  ]
+}

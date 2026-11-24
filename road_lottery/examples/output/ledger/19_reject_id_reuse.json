@@ -1,0 +1,1 @@
+{"ok": false, "error": "记录 ID R1 已在批次 B1-base 中使用；记录 ID 重用整批拒绝", "code": "record_id_reused"}

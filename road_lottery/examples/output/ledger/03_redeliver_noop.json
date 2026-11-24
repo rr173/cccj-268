@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "noop": true,
+  "batch_id": "B1-base",
+  "imported": 0,
+  "record_ids": [
+    "R1"
+  ],
+  "content_hash": "d3f61d0269cc53ca9d66ab96c3e3e163e3e7647b3d8ec2929fbf59d01bee7303"
+}

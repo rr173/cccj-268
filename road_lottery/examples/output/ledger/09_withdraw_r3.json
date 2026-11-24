@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "withdrawn": true,
+  "noop": false,
+  "record_id": "R3",
+  "withdrawal": {
+    "schema": "road-withdrawal/1",
+    "record_id": "R3",
+    "reason": "丙组回执串签，撤回"
+  }
+}

@@ -1,0 +1,1 @@
+{"ok": false, "error": "签 T1 已绑定原出票回执 52abc8e7ba59…；原出票点与依据不可被后续换版回执改写", "code": "receipt_binding_conflict"}
